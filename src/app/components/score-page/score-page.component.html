@@ -1,0 +1,17 @@
+<div class="mainContainer">
+    <div class="headContainer">
+        <div class="title">
+            CLASSEMENT GÉNÉRAL
+        </div>
+        <button class="backButton" [routerLink]="''">BACK</button>
+    </div>
+    <div class="bodyContainer">
+        <div class="scoreContainer">
+            <div class="playerScoreContainer" *ngFor="let score of scores; let i = index;" [ngClass]="{'playerScoreContainer': true, 'first': i===0, 'second': i===1, 'third': i===2 }">
+                <div class="rank">#{{i + 1}}</div>
+                <div class="playerName">{{score.username}}</div>
+                <div class="playerScore">{{score.score}}</div>
+            </div>
+        </div>
+    </div>
+</div>

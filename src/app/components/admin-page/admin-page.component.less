@@ -1,0 +1,54 @@
+.mainContainer {
+    .questionsContainer {
+        .questionContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 20px;
+            background-color: rgb(255, 218, 131);
+            
+            .questionGroup {
+                display: flex;
+                flex-direction: column;
+                .answersContainer {
+                    display: flex;
+                    flex-direction: row;
+                    .answerDescription {
+                        margin-right: 20px;
+                    }
+                    .correct {
+                        color: green;
+                    }
+                    .incorrect {
+                        color: red;
+                    }
+                }
+            }
+            .eraseButton {
+                margin-right: 10px;
+                align-self: center;
+    
+                .delButton {
+                    background-color: red;
+                    color: white;
+                    cursor: pointer;
+                    border-radius: 5px;
+                }
+            }
+        }
+        .addQuestionContainer {
+            margin-top: 20px;
+
+            .questionInput {
+                width: 400px;
+                margin-bottom: 10px;
+            }
+
+            .inputOptions {
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

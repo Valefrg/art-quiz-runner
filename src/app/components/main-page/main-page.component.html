@@ -1,0 +1,42 @@
+<div class="page-principale">
+    <div class="jeu-graphique">
+        <div class="game-infos">
+            Score : {{ quizState?.gameState?.currentPoints }}
+        </div>
+        <app-phaser-animation></app-phaser-animation>
+    </div>
+    <div class="jeu-quiz">
+        <div class="menu-container" *ngIf="!quizState || !quizState.nextQuestion">
+            <input type="text" class="username-input" [(ngModel)]="username" [placeholder]="placeHolder" maxlength="30">
+            <div class="flex-container">
+                <div class="group1">
+                    <div class="start-container">
+                        <button class="start-button" (click)="startGame()" [disabled]="!username">START</button>
+                    </div>
+                    <div class="other-container" *ngIf="!quizState || !quizState.nextQuestion">
+                        <button class="credits-button">CREDITS</button>
+                        <button class="admin-button" [routerLink]="'admin'">ADMIN</button>
+                    </div>
+                </div>
+                <div class="group2">
+                    <div class="credits-container">
+                        <button class="score-button" [routerLink]="'score'">SCORE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-quiz [quizState]="quizState" (quizStateChange)="quizStateChanged($event)"></app-quiz>
+    </div>
+    <div class="footer-container">
+        <div class="left-footer" *ngIf="!quizState || !quizState.nextQuestion">
+            <div class="connect-mode" (click)="switchConnect()" [ngClass]="{'connect-mode': true, 'mode-on': isOnlineMode, 'mode-off': !isOnlineMode}">
+                <div class="label">SWITCH TO</div>
+                <div class="mode">{{isOnlineMode ? 'OFFLINE' : 'ONLINE'}}</div>
+            </div>
+        </div>
+        <div class="right-footer">
+            <div class="health-text" (click)="loadServerStatus()">SERVER STATUS</div>
+            <div class="health-container" [ngClass]="{'health-container': true, 'healthy': isServerHealthy, 'unhealthy': !isServerHealthy, 'loading': isServerHealthy === undefined || isServerHealthy === null}"></div>
+        </div>
+    </div>
+</div>

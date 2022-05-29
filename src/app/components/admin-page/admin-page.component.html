@@ -1,0 +1,39 @@
+<div class="mainContainer">
+    <button class="backButton" [routerLink]="''">BACK</button>
+    <div class="authContainer" *ngIf="!authToken">
+        <input type="text" [(ngModel)]="inputPass">
+        <button (click)="tryAuth()">LOG IN</button>
+        <div class="errorMessage">{{errorMessage}}</div>
+    </div>
+    <div class="questionsContainer" *ngIf="authToken">
+        <button class="logoutButton" (click)="logout()">LOG OUT</button>
+        <div class="questionContainer" *ngFor="let question of questions">
+            <div class="questionGroup">
+                <div class="questionDescription">
+                    {{question.description}}
+                </div>
+                <div class="answersContainer">
+                    <div [ngClass]="{'answerDescription': true, 'correct': answer.isCorrect, 'incorrect': !answer.isCorrect}" *ngFor="let answer of question.options">
+                        {{answer.description}}
+                    </div>
+                </div>
+            </div>
+            <div class="eraseButton">
+                <button class="delButton" (click)="deleteQuestionById(question.id)">DELETE</button>
+            </div>
+        </div>
+        <div class="addQuestionContainer">
+            Question: <input class="questionInput" type="text" [(ngModel)]="questionToAdd.description">
+            <div class="inputOptions">
+                <div *ngFor="let opt of questionToAdd.options; let i = index;">
+                    Choix réponse n° {{ i + 1 }}
+                    <input type="text" [(ngModel)]="opt.description">
+                    <input type="checkbox" [(ngModel)]="opt.isCorrect">
+                </div>
+                <button (click)="addOption()" [disabled]="questionToAdd.options.length >= 4">+</button>
+                <button (click)="removeOption()" [disabled]="questionToAdd.options.length <= 2">-</button>
+            </div>
+            <button (click)="addQuestion()" class="addQuestionButton">AJOUTER QUESTION</button>
+        </div>
+    </div>
+</div>

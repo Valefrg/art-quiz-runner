@@ -1,0 +1,46 @@
+.quiz-principale {
+    .question {
+        text-align: center;
+        color: white;
+        font-family: gasalt;
+        font-size: 40px;
+        font-size: 4vw;
+        margin-bottom: 15px;
+    }
+    .reponses {
+        display: flex;
+        height: 30px;
+        .reponse {
+            cursor: pointer;
+            box-sizing: content-box;
+            width: 100%;
+            text-align: center;
+            line-height: 200px;
+            font-size: 40px;
+            font-size: 4vw;
+            font-family: gasalt;
+            border-radius: 20px;
+            height: 200px;
+            margin-right: 10px;
+            margin-left: 10px;
+            border: 10px solid;
+            border-color: rgb(242, 255, 0);
+            background-color: rgb(0, 0, 0);
+            flex: 1;
+            color: rgb(242, 255, 0);
+            transition: 0.05s linear;
+            line-height: 1em;
+        }
+        .reponse:enabled:active {
+            transform: scale(0.95);
+        }
+        button:disabled,
+        button[disabled]{
+            cursor: default;
+            border-color: rgb(111, 117, 0);
+            background-color: rgb(0, 0, 0);
+            flex: 1;
+            color: rgb(111, 117, 0);
+        }
+    }
+}

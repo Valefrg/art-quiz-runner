@@ -1,0 +1,10 @@
+<div class="quiz-principale">
+    <div class="question">
+        {{ quizState?.nextQuestion?.description }}
+    </div>
+    <div class="reponses">
+        <button [disabled]="hasPlayed" class="reponse" *ngFor="let response of quizState?.nextQuestion?.options" (click)="answer(response)">
+            {{ response.description }}
+        </button>
+    </div>
+</div>

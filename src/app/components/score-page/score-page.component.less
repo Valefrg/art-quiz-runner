@@ -1,0 +1,85 @@
+.mainContainer {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    .headContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 10px;
+
+        .title {
+            color: white;
+            font-family: sedgwick;
+            font-size: 50px;
+            margin-left: 10px;
+        }
+
+        .backButton {
+            cursor: pointer;
+            height: 100%;
+            background-color: rgb(255, 64, 50);
+            color: white;
+            font-family: sedgwick;
+            font-size: 30px;
+            border-radius: 5px;
+            transition: 0.05s linear;
+            margin-right: 10px;
+        }
+
+        .backButton:hover {
+            transform: rotate(5deg);
+        }
+
+        .backButton:active {
+            transform: scale(0.95);
+        }
+    }
+    .bodyContainer {
+        .scoreContainer {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            .playerScoreContainer {
+                margin-left: 60px;
+                margin-top: 30px;
+                display: flex;
+                flex-direction: row;
+                color: white;
+
+                .rank {
+                    flex:1;
+                    font-family: sedgwick;
+                    font-size: 28px;
+                    align-self: center;
+                }
+
+                .playerName {
+                    flex:1;
+                    font-family: gasalt;
+                    font-size: 40px;
+                }
+
+                .playerScore {
+                    flex:1;
+                    font-family: gasalt;
+                    font-size: 40px;
+                }
+            }
+
+            .first {
+                color: rgb(142, 137, 0);
+            }
+
+            .second {
+                color: rgb(123, 128, 135);
+            }
+
+            .third {
+                color: rgb(143, 104, 27);
+            }
+        }
+    }
+}
