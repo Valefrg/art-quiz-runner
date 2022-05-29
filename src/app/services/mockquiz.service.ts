@@ -71,9 +71,14 @@ export class MockQuizService extends IQuizService {
     }
 
     private evolvePositive(curState: QuizState) : QuizState {
+        let random;
+        do {
+            random = this.getRandomQuestion()
+        }while(random.id === curState.nextQuestion.id)
+
         return {
             username: curState.username,
-            nextQuestion: this.getRandomQuestion(),
+            nextQuestion: random,
             gameState: this.evolveGameState(curState.gameState, environment.evolPoints,
                 environment.evolEndStatePositive, curState.gameState.goodInARow + 1, 0)
         } 

@@ -35,7 +35,6 @@ export class AdminPageComponent implements OnInit {
       this.switchService()
     });
 
-    this.authToken = localStorage.getItem('adminPass');
     this.questionToAdd = {description: null, options: [
       {description: null, isCorrect: false},
       {description: null, isCorrect: false}
@@ -91,8 +90,10 @@ export class AdminPageComponent implements OnInit {
   private switchService() {
     if (this.isOnlineMode) {
       this.adminService = this.trueAdminService;
+      this.authToken = localStorage.getItem('adminPass');
     } else {
       this.adminService = this.fakeAdminService;
+      this.authToken = 'NOAUTH';
     }
   }
 }
