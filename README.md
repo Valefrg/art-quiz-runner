@@ -13,7 +13,10 @@ Angular (basé sur TypeScript) permet une meilleure organisation du code et de s
 
 ### Pourquoi Phaser ?
 
-Phaser.js permet de mettre en place simplement des animations en utilisant 
+Phaser.js permet de mettre en place simplement des animations en utilisant des librairies gérant la physique d'un jeu pour nous. Dans ce jeu, il n'était pas forcément
+nécessaire d'utiliser une telle librairie étant donné que le jeu n'a aucun aspect nécessitant un moteur physique complet (pas de collisions, de rebonds ou autre). 
+Cependant, il a quand même permi de rendre très simple le développement de la partie graphique du jeu (jouer avec la vélocité et le focus caméra 
+pour faire avancer les personnages et faire défiler le décor).
 
 ## Modes de jeu
 
