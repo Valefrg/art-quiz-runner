@@ -38,6 +38,22 @@ La partie serveur a été développée avec un système de JWT (Json Web Token) 
 joueur répond à une nouvelle question. Il est impossible pour le joueur de tromper le serveur en modifiant l'état du jeu sans connaître la clé
 utilisée pour signer le JWT.
 
+#### Jouer en ligne
+
+Faute de temps, l'application Java n'a pas élé déployée sur un serveur gratuit. Cependant, il est possible de déployer le serveur sur votre machine
+locale et de jouer en mode connecté (même depuis https://valefrg.github.io/ car l'application web essaie de contacter l'adresse de votre machine locale par défaut).
+
+Pour ce faire, téléchargez le fichier .jar du serveur (https://github.com/adpdevit/artquizrunner-backend/tree/development/exec)
+
+Vérifiez que java est bien installé sur votre machine (au minimum version 17, privilégiez la 18 pour être sûr d'avoir une version compatible).
+ouvrir un invité de commande et tapez: java -version Si une version 17 ou supérieure est affichée, c'est OK. si non installez java ou mettez-le à jour.
+
+Ensuite, lancez la commande suivante: java -jar C:\chemin-vers-le-jar\artquizrunner-backend.jar en changeant "chemin-vers-le-jar" par le chemin réel et le lecteur "C" si besoin
+
+Le nom "SPRING" devrait apparaître et le serveur devrait se lancer et écouter sur le port 8080.
+
+Une fois le serveur lancé, vous pouvez retourner sur https://valefrg.github.io/ et cliquer sur le statut serveur en bas à droite qui devrait passer au vert.
+
 # Informations Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
