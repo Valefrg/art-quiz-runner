@@ -2,7 +2,11 @@
 
 Le jeu est accessible via l'URL : https://valefrg.github.io/ 
 
-## Informations sur le projet
+## Informations sur le projet 
+
+ArtQuizRunner est un jeu, mélangeant quizz et running game. Le but de jeu est de répondre correctement aux questions (ciblées sur l'histoire de l'art) afin de faire avancer le personnage principale se faisant courser par un robot dans un décor de musée. A chaque bonne réponse, le score augmente et le personnage avance. A l'inverse en cas de mauvaise réponse, le personnage trébuche et après trois chutes, il se fait viser par le robot mettant un terme à la partie.  Le jeu stimule non seulement les connaissances du joueur dans le champ de l'histoire de l'art, mais aussi, du fait qu'il y a une partie running game et un score cela récompense le joueur, lui donnant envie de réussir toujours plus. De ce fait ce jeu est ludique car à force de vouloir dépasser son score, le joueur mémorisera les réponses. Le jeu est adapté à des joueurs ayant un niveau de base en histoire de l'art mais aussi à des débutants voulant en apprendre plus sur le domaine. 
+
+## Informations sur le projet (technique)
 
 Ce projet a été développé avec le framework Angular (pour la partie Quiz) et avec Phaser.js (pour la partie animations)
 Il est possible de faire communiquer le jeu avec un serveur développé en Java.
